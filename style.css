@@ -1,0 +1,73 @@
+html, body {
+    margin: 0;
+    color: #000080;
+    font-family: sans-serif;
+}
+
+.main {
+    width: 100vw;
+    height: 100vh;
+
+    background-image: linear-gradient(
+        to top left,
+        #2980B9,
+        #6DD5FA,
+        #FFFFFF
+    );
+
+    background-size: 1200% 1200%;
+    background-position: 0 80%;
+    animation: rainbow 11s linear alternate infinite;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.content {
+    width: 61vw;
+}
+
+.title {
+    font-size: 42px;
+    text-shadow: 1px 1px 2.1px #000080;
+}
+
+.cursor {
+    display: inline-block;
+    width: 2px;
+    height: 16px;
+    background-color: black;
+    animation: blink .3s ease-in-out alternate infinite;
+    margin-left: 2.1px;
+
+    vertical-align: text-top;
+}
+
+.cursor-big {
+    height: 42px;
+}
+
+@keyframes blink {
+    0% {
+        background-color: white;
+    }
+
+    100% {
+        background-color: black;
+    }
+}
+
+@keyframes rainbow {
+    0% {
+        background-position: 0 25%;
+    }
+
+    50% {
+        background-position: 25% 75%;
+    }
+
+    100% {
+        background-position: 100% 50%;
+    }
+}
