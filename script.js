@@ -3,7 +3,7 @@
     const cursor = document.querySelector('.cursor');
     const line1 = 'Hi, I\'m Benjamin!';
     const line2 = 'Nice meeting you😆';
-    const line3 = 'So, in the spirit of \'A new life start with something new\' I created this project to clebrate the freedom and to document my thoughts in the upcoming adventure!';
+    const line3 = 'So, in the spirit of \'A new life start with something new\' I created this project to celebrate the freedom and to document my thoughts in the upcoming adventure!';
     const line4 = 'Well, here we go~👨‍💻🏃‍♂️💪👊🤣'
 
     const arr = [...line1];
