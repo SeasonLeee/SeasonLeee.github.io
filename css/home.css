@@ -10,18 +10,20 @@ html, body {
 
     background-image: linear-gradient(
         to top left,
-        #2980B9,
+        #FFFFFF,
         #6DD5FA,
-        #FFFFFF
+        #2980B9
     );
 
     background-size: 1200% 1200%;
-    background-position: 0 80%;
+    /* background-position: 0 80%; */
     animation: rainbow 11s linear alternate infinite;
 
     display: flex;
     align-items: center;
     justify-content: center;
+
+    overflow-y: hidden;
 }
 
 .content {
@@ -48,6 +50,45 @@ html, body {
     height: 42px;
 }
 
+.nav-item {
+    font-size: 21px;
+    font-weight: bold;
+    transition: 1s;
+    width: max-content;
+    animation: floatUp 3s ease-in-out forwards;
+}
+
+.nav-item > a {
+    text-decoration: none;
+    color: unset;
+}
+
+.hidden {
+    display: none;
+}
+
+@keyframes floatUp {
+    0% {
+        transform: skewY(-17deg) translate(42px, 40vh);
+    }
+
+    25% {
+        transform: skewY(17deg) translate(-42px, 30vh);
+    }
+
+    50% {
+        transform: skewY(-17deg) translate(42px, 20vh);
+    }
+
+    75% {
+        transform: skewY(17deg) translate(-42px, 10vh);
+    }
+
+    100% {
+        transform: skewY(0) translate(0, 0);
+    }
+}
+
 @keyframes blink {
     0% {
         background-color: white;
@@ -68,6 +109,6 @@ html, body {
     }
 
     100% {
-        background-position: 100% 50%;
+        background-position: 75% 100%;
     }
 }

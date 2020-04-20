@@ -1,0 +1,16 @@
+---
+layout: list.liquid
+---
+{% for post in collections.posts %}
+<section class="section">
+    <h1>{{ post.data.pageTitle }}</h1>
+    <p class="time">{{ post.date | date: "%Y-%m-%d" }}</p>
+    <!-- <div class="divider"></div> -->
+    <p class="excerpt">{% excerpt post %}</p>
+    <!-- <div class="divider"></div> -->
+    <p>
+        <a href="{{ post.url | url }}"
+   aria-label="Read more on {{ post.data.title }}" class="read-more">Read more</a>
+    </p>  
+</section>
+{% endfor %}

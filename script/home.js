@@ -3,7 +3,7 @@
     const cursor = document.querySelector('.cursor');
     const line1 = 'Hi, I\'m Benjamin!';
     const line2 = 'Nice meeting you😆';
-    const line3 = 'So, in the spirit of \'A new life start with something new\' I created this project to celebrate the freedom and to document my thoughts in the upcoming adventure!';
+    const line3 = 'So, in the spirit of \'A new life start with something new\' I created this project to clebrate the freedom and to document my thoughts in the upcoming adventure!';
     const line4 = 'Well, here we go~👨‍💻🏃‍♂️💪👊🤣'
 
     const arr = [...line1];
@@ -12,6 +12,9 @@
     const arr4 = [...line4];
 
     let timeouts = [];
+
+    const siteNav = document.querySelector('.site-nav');
+    const postsNav = document.querySelector('.nav-item');
 
     // TODO: make this whatever-it-is... more concise... 
     new Promise((resolve, reject) => {
@@ -23,7 +26,12 @@
             new Promise((resolve, reject) => {
                 typing(3, arr3, 121, false, resolve);
             }).then(() => {
-                typing(4, arr4, 100, true);
+                new Promise((resolve, reject) => {
+                    typing(4, arr4, 100, true, resolve)
+                }).then(() => {
+                    content.appendChild(siteNav);
+                    postsNav.classList.remove('hidden');
+                })
             })
         })
     });
@@ -55,12 +63,17 @@
                 // clear all the timeout to release space
                 if (i == letterArr.length - 1) {
                     timeouts.forEach(ele => { if (ele) { clearTimeout(ele) } });
+                    
+                    if (resolve) resolve();
+
                     if (isLastLine == false) {
                         // insertElement('br');
-                        resolve();
+                        // resolve();
                     } else {
                         line.removeChild(cursor);
                     }
+
+                    if (resolve) resolve();
                 }
             }, time * i));
         }

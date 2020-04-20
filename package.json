@@ -1,0 +1,26 @@
+{
+  "name": "seasonleee.github.io",
+  "version": "1.0.0",
+  "description": "Benjamin's static site blog",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SeasonLeee/seasonleee.github.io.git"
+  },
+  "keywords": [
+    "SSG",
+    "blog"
+  ],
+  "author": "Benjamin",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SeasonLeee/seasonleee.github.io/issues"
+  },
+  "homepage": "https://github.com/SeasonLeee/seasonleee.github.io#readme",
+  "devDependencies": {
+    "@11ty/eleventy": "^0.10.0"
+  }
+}
