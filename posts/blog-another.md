@@ -1,4 +1,6 @@
 ---
+layout: post.liquid
+tags: ["posts"]
 pageTitle: There's not much going on here...
 ---
 

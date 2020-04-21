@@ -1,4 +1,6 @@
 ---
+layout: post.liquid
+tags: ["posts"]
 pageTitle: This is nice... I think😅
 date: 2020-04-20
 ---
