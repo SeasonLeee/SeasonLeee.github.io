@@ -2,24 +2,24 @@ html, body {
     margin: 0;
     color: #000080;
     font-family: sans-serif;
-}
-
-.main {
-    width: 100vw;
-    height: 100vh;
-
+    min-height: 100vh;
     background-image: linear-gradient( 
         to bottom right, 
         #FFFFFF, 
         #6DD5FA );
-
     background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+
+.main {
+    width: 100vw;
     display: flex;
     justify-content: center;
 }
 
 .section {
     min-width: 61vw;
+    font-size: 18px;
 }
 
 .section:first-child {
@@ -28,4 +28,5 @@ html, body {
 
 .time {
     font-style: italic;
+    font-size: 16px;
 }

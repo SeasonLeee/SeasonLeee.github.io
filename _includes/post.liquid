@@ -5,14 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>😆Benjamin🤪</title>
     <link rel="stylesheet" href="/css/post.css">
+    <link rel="stylesheet" href="/css/prism-base16-ateliersulphurpool.light.css">
     <link rel='shortcut icon' type='image/x-icon' href='/img/favicon.ico' />
 </head>
 <body>
     <main class="main">
         <section class="section">
             <h1>{{ pageTitle }}</h1>
-            <p class="time">{{ date }}</p>
-            {% comment %} <p class="excerpt">I love GuoJianglin I will do anything for him</p> {% endcomment %}
+            <p class="time">{{ date | date: "%Y-%m-%d" }}</p>
             <p> {{ content }} </p>
         </section>
     </main>

@@ -1,3 +1,5 @@
+const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
+
 module.exports = function (eleventyConfig) {
     eleventyConfig.addPassthroughCopy('css');
     eleventyConfig.addPassthroughCopy('script');
@@ -5,6 +7,8 @@ module.exports = function (eleventyConfig) {
     eleventyConfig.addPassthroughCopy('list');
 
     eleventyConfig.addShortcode('excerpt', article => extractExcerpt(article));
+
+    eleventyConfig.addPlugin(syntaxHighlight);
 }
 
 function extractExcerpt(article) {
