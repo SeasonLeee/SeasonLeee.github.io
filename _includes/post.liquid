@@ -10,11 +10,21 @@
 </head>
 <body>
     <main class="main">
+        <nav class="nav">
+            <span><a href="/">Home</a></span>
+            <span><a href="/posts">Posts</a></span>
+        </nav>
         <section class="section">
-            <h1>{{ pageTitle }}</h1>
-            <p class="time">{{ date | date: "%Y-%m-%d" }}</p>
+            <div class="header">
+                <h1>{{ pageTitle }}</h1>
+                <p class="time">{{ date | date: "%Y-%m-%d" }}</p>
+            </div>
             <p> {{ content }} </p>
         </section>
+        <footer class="footer">
+            Made By Benjamin <br>
+            With 💔🙃😩😭😀😅😆🤣❤️
+        </footer>
     </main>
 </body>
 </html>

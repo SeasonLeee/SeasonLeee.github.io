@@ -22,8 +22,7 @@ function extractExcerpt(article) {
 
     // The start and end separators to try and match to extract the excerpt
     const separatorsList = [
-        { start: '<!-- Excerpt Start -->', end: '<!-- Excerpt End -->' },
-        { start: '<p>', end: '</p>' }
+        { start: '<!-- Excerpt Start -->', end: '<!-- Excerpt End -->' }
     ];
 
     separatorsList.some(separators => {
