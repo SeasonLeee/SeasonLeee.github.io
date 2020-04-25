@@ -6,35 +6,109 @@
     const line3 = 'So, in the spirit of \'A new life start with something new\' I created this project to celebrate the freedom and to document my thoughts in the upcoming adventure!';
     const line4 = 'Well, here we go~👨‍💻🏃‍♂️💪👊🤣'
 
-    const arr = [...line1];
-    const arr2 = [...line2];
-    const arr3 = [...line3];
-    const arr4 = [...line4];
+    const question = 'Keep \"talking\" with me or see what else do we have here?'
+
+    const line1Arr = [...line1];
+    const line2Arr = [...line2];
+    const line3Arr = [...line3];
+    const line4Arr = [...line4];
+
+    const questionArr = [...question];
 
     let timeouts = [];
 
     const siteNav = document.querySelector('.site-nav');
     const postsNav = document.querySelector('.nav-item');
 
+    const questBtnContainer = document.querySelector('.option-container');
+    const formerBtn = document.querySelector('.former-btn');
+    const latterBtn = document.querySelector('.latter-btn');
+
+    // be careful of this crazy nth-of-type selector
+    const text = document.querySelector('.content > .text:nth-of-type(3)');
+
     // TODO: make this whatever-it-is... more concise... 
     new Promise((resolve, reject) => {
-        typing(1, arr, 121, false, resolve);
-    }).then(() => {
-        new Promise((resolve, reject) => {
-            typing(2, arr2, 121, false, resolve);
-        }).then(() => {
-            new Promise((resolve, reject) => {
-                typing(3, arr3, 121, false, resolve);
-            }).then(() => {
-                new Promise((resolve, reject) => {
-                    typing(4, arr4, 100, true, resolve)
-                }).then(() => {
-                    content.appendChild(siteNav);
-                    postsNav.classList.remove('hidden');
+        typing(1, line1Arr, 121, false, resolve);
+    })
+    .then(() => {
+       return new Promise((resolve, reject) => {
+            typing(2, line2Arr, 121, false, resolve);
+        })        
+    })
+
+    .then(() => {
+        return new Promise((resolve, reject) => {
+            typing(2, questionArr, 121, true, resolve);
+        })
+    })
+
+    .then(() => {
+        return new Promise((resolve, reject) => {
+            content.appendChild(questBtnContainer);
+            questBtnContainer.classList.remove('hidden');
+
+            formerBtn.addEventListener('click', () => {
+                // console.log(`text == ${document.querySelector('.content > .text:nth-of-type(3)')}`);
+                // text.classList.add('hidden');
+                
+                document.querySelector('.content > .text:nth-of-type(3)').classList.add('hidden');
+
+                questBtnContainer.classList.add('hidden');
+                resolve('former');
+            });
+
+            latterBtn.addEventListener('click', () => {
+                // console.log(text);
+                // text.classList.add('hidden');
+
+                document.querySelector('.content > .text:nth-of-type(3)').classList.add('hidden');
+
+                questBtnContainer.classList.add('hidden');
+                resolve('latter');
+            });
+        })
+    })
+
+    .then((res) => {
+        if (res === 'former') {
+            return new Promise((resolve, reject) => {
+                typing(2, line3Arr, 121, false, resolve);
+            })
+            .then(() => {
+                return new Promise((resolve, reject) => {
+                    typing(2, line4Arr, 100, true, resolve)
                 })
             })
-        })
-    });
+            .then(() => {
+                content.appendChild(siteNav);
+                postsNav.classList.remove('hidden');
+            })            
+        } else if (res === 'latter') {
+            return new Promise((resolve, reject) => {
+                typing(2, line4Arr, 100, true, resolve)
+            })
+            .then(() => {
+                content.appendChild(siteNav);
+                postsNav.classList.remove('hidden');
+            }) 
+        }
+    })
+
+    // .then(() => {
+    //     return new Promise((resolve, reject) => {
+    //         typing(2, line3Arr, 121, false, resolve);
+    //     })
+    // })
+    // .then(() => {
+    //     return new Promise((resolve, reject) => {
+    //         typing(2, line4Arr, 100, true, resolve)
+    //     })
+    // })
+    // .then(() => {
+    //     content.appendChild(siteNav);
+    //     postsNav.classList.remove('hidden');
+    // })
 
     function insertElement(parent, child, letter) {
         content.appendChild(parent);
