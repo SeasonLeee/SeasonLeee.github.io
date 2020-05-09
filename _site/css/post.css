@@ -1,12 +1,9 @@
 html, body {
     margin: 0;
-    color: #000080;
-    font-family: sans-serif;
+    color: #010121;
+    font-family: monospace;
     min-height: 100vh;
-    background-image: linear-gradient( 
-        to bottom right, 
-        #FFFFFF, 
-        #6DD5FA );
+    background-color: #3A96CA;
     background-size: 100% 100%;
     background-repeat: no-repeat;
 }
@@ -45,6 +42,7 @@ a {
 .footer {
     margin: 3vh 0;
     text-align: center;
+    font-size: 14px;
 }
 
 .time {
@@ -54,6 +52,7 @@ a {
 
 p {
     line-height: 1.5;
+    color: #222250;
 }
 
 p:not([class]) {
