@@ -6,7 +6,7 @@
     const line3 = 'So, in the spirit of \'A new life start with something new\' I created this project to celebrate the freedom and to document my thoughts in the upcoming adventure!';
     const line4 = 'Well, here we go~👨‍💻🏃‍♂️💪👊🤣'
 
-    const question = 'Keep \"talking\" with me or see what else do we have here?'
+    const question = 'Keep chatting or see posts directly?'
 
     const line1Arr = [...line1];
     const line2Arr = [...line2];
